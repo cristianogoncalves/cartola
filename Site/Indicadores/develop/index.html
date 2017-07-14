@@ -76,7 +76,24 @@ div.Menu {
 		console.log(posicao);
 		$('#g-chart').empty();
 
+
 		create_table(posicao);
+
+		if (posicao == "Atacante") {
+			$('#g-chart').height(2600);	
+		}
+
+		if (posicao == "Meia") {
+			$('#g-chart').height(3850);	
+		}
+
+		if (posicao == "Zagueiro" || posicao == "Lateral") {
+			$('#g-chart').height(1700);	
+		}
+
+		if (posicao == "Goleiro") {
+			$('#g-chart').height(700);	
+		}
 
 	};
 
