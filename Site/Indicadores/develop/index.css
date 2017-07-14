@@ -26,14 +26,14 @@
 
 .g-title,
 .g-subtitle {
-  color: #333;
+  color: #ffffff;
   font-size: 17px;
   line-height: 1.15em;
   margin-bottom: .5em;
 }
 
 .g-body .g-subtitle {
-  background: #eee;
+  background: #4248f4;
   cursor: default;
   font-size: 13px;
   font-weight: bold;
@@ -54,7 +54,7 @@
 }
 
 .g-body .g-subtitle:hover {
-  background: #ddd;
+  background: #4b67cc;
 }
 
 .g-body .g-ascending:after,
@@ -79,17 +79,18 @@
 }
 
 .g-special .g-value {
-  fill: darkorange;
+  fill: #0925f9;
   font-weight: bold;
 }
 
 .g-special .g-bar {
-  fill: orange;
+  fill: #0bb2ea;
   fill-opacity: 1;
+
 }
 
 .g-special .g-quantitative .g-value {
-  fill: #000;
+  fill: #000000;
 }
 
 .g-background {

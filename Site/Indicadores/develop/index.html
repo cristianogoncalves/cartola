@@ -5,34 +5,81 @@
 <head>
 
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="d3.v2.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="index.js"></script>
 
 </head>
 
+<style>
+
+div.Menu {
+  height: 30px;
+  width: 100%;
+  display: inline-table;
+  background-color: transparent;
+  background-size: cover;
+  border-radius: 0px;
+  border: 1px solid transparent;
+  }
+
+#botoes {
+  float: left;
+  text-align:bottom;
+}
+
+</style>
+
 <body>
-<p> Cristiano </p>
+
+	<div class="Menu">
+	<form class="pure-form pure-form-stacked" id="botoes">
+	    <select id="mySelect" name='form1' >
+	    <option value="nulo">Posicao</option>
+	    <option value="Goleiro">Goleiro</option>
+	    <option value="Zagueiro">Zagueiro</option>
+	    <option value="Lateral">Lateral</option>
+	    <option value="Meia">Meia</option>
+	    <option value="Atacante">Atacante</option>	    
+	  </select>
+  	</form>
+	
+  	<button  onclick="answers();" id="botoes" type="button" class="pure-button pure-button-primary">Atualizar</button>
+	</div>
+
+
+
 <div id="g-table">
 	<div class="g-body">
-		<div class="g-column"><div class="g-subtitle g-ascending"><div>School district</div></div></div>
-		<div class="g-column"><div class="g-subtitle"><div>Annual salary for a<br>first-year teacher ($)</div></div></div>
-		<div class="g-column"><div class="g-subtitle"><div>Master&rsquo;s degree, highest step of pay scale ($)</div></div></div>
-		<div class="g-column"><div class="g-subtitle"><div>Scheduled <br>workday (hours)</div></div></div>
-		<div class="g-column"><div class="g-subtitle"><div>Test scores used in evaluations</div></div></div>
-		<div class="g-column"><div class="g-subtitle"><div>Recall rights for<br>laid-off employees</div></div></div>
+		<div class="g-column"><div class="g-subtitle g-ascending"><div>Jogador</div></div></div>
+		<div class="g-column"><div class="g-subtitle"><div>Clube</div></div></div>
+		<div class="g-column"><div class="g-subtitle"><div>Valor Esperado <br>na rodada</div></div></div>
+		<div class="g-column"><div class="g-subtitle"><div>Cartoleta (C$)</div></div></div>
+		<div class="g-column"><div class="g-subtitle"><div>Valor Esperado / C$ </div></div></div>
+		<div class="g-column"><div class="g-subtitle"><div>Valor Esperado / <br>Desvio padrão</div></div></div>
+		<div class="g-column"><div class="g-subtitle"><div>Variação<br>Cartoleta</div></div></div>
 	</div>
-	<svg id="g-chart" width="950" height="2400">
-	<clipPath id="g-clip-cell">
-		<rect width="156" height="21"></rect>
-	</clipPath>
-		<linearGradient id="g-clip-gradient" y2="0%">
-			<stop offset="0%" stop-color="#fff" stop-opacity="0"></stop>
-			<stop offset="100%" stop-color="#fff" stop-opacity="1"></stop>
-		</linearGradient>
+	<svg id="g-chart" width="1200" height="3850">
+	
 	</svg>
 <br clear="left">
 </div>
 
-<script src="index.js"></script>
+<!--<script src="index.js"></script>-->
+<script>
+	function answers(){
+
+		var answer=document.getElementById("mySelect");
+		var posicao = answer[answer.selectedIndex].value;
+
+		console.log(posicao);
+		$('#g-chart').empty();
+
+		create_table(posicao);
+
+	};
+
+</script>
 
 </body>
